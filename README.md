@@ -36,7 +36,7 @@ I want to filter links by tags.
 - Capybara
 
 **Frontend**
-- Bootstrap
+- Bootstrap 
 - CSS
 
 **Deployment**
