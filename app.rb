@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/link'
+require './lib/server'
+
 
 class Bookmark < Sinatra::Base
 
@@ -6,6 +9,11 @@ class Bookmark < Sinatra::Base
    erb :bookmarkie
   end
 
+  get '/links' do
+
+    @links = Link.all
+    erb :'links/index'
+  end
 
 
 
