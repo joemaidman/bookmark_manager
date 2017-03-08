@@ -1,9 +1,9 @@
 require './lib/link'
 
 describe Link do
-  subject(:link){described_class.new('https://inbox.google.com/u/0/?pli=1')}
-xit "takes you to a web site" do
-    expect(link.url).to eq('https://inbox.google.com/u/0/?pli=1')
+  subject(:link){described_class.new(url: 'http://www.bbc.co.uk', title: 'BBC News')}
+  it "Creates a link" do
+    expect(link.url).to eq('http://www.bbc.co.uk')
+    expect(link.title).to eq('BBC News')
   end
-
 end

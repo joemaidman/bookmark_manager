@@ -1,5 +1,8 @@
 #Bookmark Manager
 
+*User stories*
+
+```sh
 As a web user,
 So I can keep track of my browsing,
 I want to see a list of links I’ve saved.
@@ -15,3 +18,5 @@ I want to tag my links.
 As a web user,
 So I can concentrate on a category
 I want to filter links by tags.
+```
+
