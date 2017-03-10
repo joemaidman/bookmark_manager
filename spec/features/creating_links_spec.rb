@@ -3,20 +3,13 @@ require './app'
 describe "Feature" do
 
   feature 'create a new link' do
+    title = 'Google'
+    url = 'https://www.google.com'
     scenario 'user creates a new link' do
-        visit('/links')
-        click_link 'Add link'
-        fill_in 'title', with: 'Google'
-        fill_in 'url', with: 'https://www.google.com'
-        fill_in 'tag', with: 'search engine'
-        click_button 'Add'
-        expect(current_path).to eq '/links'
-        expect(page).to have_content("Title: Google")
-        expect(page).to have_content("URL: https://www.google.com")
-        link = Link.first
-        expect(link.tags.map(&:tag)).to include('search engine')
-        # expect(page).to have_text("search engine")
+      create_link(title: title, url: url)
+      expect(page).to have_content("Title: #{title}")
+      expect(page).to have_content("URL: #{url}")
     end
-    
-end
+  end
+  
 end

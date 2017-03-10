@@ -3,6 +3,8 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
+require_relative 'web_helpers'
+
 
 ENV['RACK_ENV'] = 'test'
 

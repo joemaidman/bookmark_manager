@@ -1,3 +1,5 @@
+
+ENV['RACK_ENV'] ||= 'development'
 require 'data_mapper'
 require 'dm-postgres-adapter'
 require 'sinatra/base'
@@ -5,8 +7,6 @@ require './lib/tag'
 require './lib/link'
 require './lib/server'
 
-
-ENV['RACK_ENV'] ||= 'development'
 
 class Bookmark < Sinatra::Base
 
@@ -25,10 +25,17 @@ class Bookmark < Sinatra::Base
 
   post '/links' do
     link = Link.create(title: params[:title], url: params[:url])
-    tag = Tag.create(tag: params[:tag])
-    link.tags << tag
+    params[:tags].split(',').map!(&:strip).each do |tag|
+     link.tags << Tag.first_or_create(tag: tag)
+    end
     link.save
     redirect '/links'
+  end
+
+  get '/tags/:tag' do
+    tag = Tag.first(tag: params[:tag])
+    @links = tag ? tag.links : []
+    erb :'links/index'
   end
 
 end
