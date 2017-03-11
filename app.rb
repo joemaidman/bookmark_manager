@@ -13,6 +13,7 @@ require 'sinatra/flash'
 class Bookmark < Sinatra::Base
 
   register Sinatra::Flash
+  use Rack::MethodOverride
   enable :sessions
   set :session_secret, 'super secret'
 
@@ -82,5 +83,11 @@ end
       erb :'sessions/new'
     end
   end
+
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = 'You have signed-out.'
+    redirect to '/links'
+end
 
 end

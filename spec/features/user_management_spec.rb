@@ -37,18 +37,48 @@ feature 'User sign up' do
 end
 
 feature 'User sign in' do
- let!(:user) do
-    User.create(email: 'user@example.com',
-                password: 'secret1234',
-                password_confirmation: 'secret1234')
+  email = "joemaidman@gmail.com"
+  email_wrong = "joemaidman@gmail"
+  password = "password"
+  password_wrong = "password2"
+
+  let!(:user) do
+    User.create(email: email,
+                password: password,
+                password_confirmation: password)
   end
 
   scenario 'has correct email and password to login' do
     sign_in(email: user.email,   password: user.password)
     expect(page).to have_content "Welcome, #{user.email}"
-
   end
 
-
+  scenario 'has incorrect email and password to login' do
+    sign_in(email: user.email,   password: password_wrong)
+    expect(page).to have_content "Invalid email address or password"
   end
+
+end
+
+feature 'User sign out' do
+  email = "joemaidman@gmail.com"
+  email_wrong = "joemaidman@gmail"
+  password = "password"
+  password_wrong = "password2"
+
+  let!(:user) do
+    User.create(email: email,
+                password: password,
+                password_confirmation: password)
+  end
+
+  scenario 'user logs out' do
+    sign_in(email: user.email,   password: user.password)
+    click_button 'Sign out'
+    expect(page).to have_content('You have signed-out.')
+    expect(page).not_to have_content('Welcome, test@test.com')
+  end
+
+end
+  
   
