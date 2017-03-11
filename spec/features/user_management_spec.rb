@@ -7,7 +7,7 @@ feature 'User sign up' do
   
   scenario 'I can sign up as a new user' do
     sign_up(email:email, password: password)
-    expect(page).to have_content("Welcome, #{email}")
+    expect(page).to have_content("#{email}")
     expect(User.first.email).to eq(email)
     expect(User.count).to eq(1)
   end
@@ -53,7 +53,7 @@ feature 'User sign in' do
 
   scenario 'has correct email and password to login' do
     sign_in(email: user.email,   password: user.password)
-    expect(page).to have_content "Welcome, #{user.email}"
+    expect(page).to have_content "#{user.email}"
   end
 
   scenario 'has incorrect email and password to login' do
@@ -79,7 +79,7 @@ feature 'User sign out' do
     sign_in(email: user.email,   password: user.password)
     click_button 'Sign out'
     expect(page).to have_content('You have signed-out.')
-    expect(page).not_to have_content('Welcome, test@test.com')
+    expect(page).not_to have_content('test@test.com')
   end
 
 end

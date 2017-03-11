@@ -1,10 +1,12 @@
 <% if flash[:errors] && !flash[:errors].empty? %>
-  Please correct the following errors:
+<div class="warnings">
+  <h6>Please correct the following errors</h6>
   <ul id='errors'>
   <% flash[:errors].each do |error| %>
     <li><%= error %></li>
   <% end %>
   </ul>
+  </div>
 <% end %>
   
 <% if flash[:notice] %>

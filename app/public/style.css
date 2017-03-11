@@ -1,7 +1,9 @@
-.button{
-  border: solid black 2px;
-  font-size: 18px;
-  background-color: lightblue;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  padding: 5px;
+.panel-item{
+border: solid black 2px;
+border-radius:5px;padding:5px;
+}
+
+.warnings{
+border: solid red 2px;
+border-radius:5px;padding:5px;
 }

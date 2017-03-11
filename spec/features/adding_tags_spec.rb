@@ -11,6 +11,14 @@ feature 'Adding a tag to a link' do
   title = 'Google'
   url = 'https://www.google.com'
   tag_multi_one = "tag one, tag two, tag three"
+  
+  email = "joemaidman@gmail.com"
+  password = "password"
+
+  before(:each) do
+    sign_up(email: email, password: password)
+    sign_in(email: email, password: password)
+  end
 
   scenario 'user adds a tag to a link' do
     create_link(title: title, url: url, tag: tag)
