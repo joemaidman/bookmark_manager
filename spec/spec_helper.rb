@@ -3,7 +3,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
-require_relative 'web_helpers'
+require_relative 'helpers/web_helpers'
 
 
 ENV['RACK_ENV'] = 'test'
@@ -25,7 +25,7 @@ ENV['RACK_ENV'] = 'test'
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 
-require './app'
+require './app/app'
 Capybara.app = Bookmark
 
 

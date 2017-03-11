@@ -1,5 +1,5 @@
 require 'data_mapper'
-require_relative './app.rb'
+require_relative 'app/app'
 task default: :upgrade #%w[test]
 
 namespace :db do

@@ -13,6 +13,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'sinatra-flash'
+gem 'sinatra-partial'
 
 
 

@@ -1,5 +1,3 @@
-require './app'
-
 describe "Feature" do
 
   feature 'create a new link' do

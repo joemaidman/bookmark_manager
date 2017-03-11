@@ -1,4 +1,4 @@
-require './lib/link'
+require './app/models/link'
 
 describe Link do
   subject(:link){described_class.new(url: 'http://www.bbc.co.uk', title: 'BBC News')}

@@ -1,5 +1,3 @@
-require './app'
-
 describe "Feature" do
 
   feature 'show all links' do
@@ -11,6 +9,5 @@ describe "Feature" do
       expect(page).to have_content('URL: http://www.bbc.co.uk/news')
     end
   end
-
 
 end

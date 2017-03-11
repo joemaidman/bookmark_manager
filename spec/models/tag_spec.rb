@@ -1,4 +1,4 @@
-require './lib/tag'
+require './app/models/tag'
 
 describe Tag do
 
