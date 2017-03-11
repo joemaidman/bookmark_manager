@@ -13,8 +13,7 @@ describe User do
   end
 
   it 'does not authenticate when given an incorrect password' do
-  expect(User.authenticate(user.email, 'wrong_stupid_password')).to be_nil
-end
-
+    expect(User.authenticate(user.email, 'wrong_stupid_password')).to be_nil
+  end
 
 end

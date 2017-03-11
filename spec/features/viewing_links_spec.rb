@@ -1,4 +1,5 @@
-feature 'Viewing links' do 
+feature 'Viewing links' do
+  
   title = 'Google'
   url = 'https://www.google.com'
   tag = "tag1"

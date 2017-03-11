@@ -20,4 +20,3 @@ As a web user,
 So I can concentrate on a category
 I want to filter links by tags.
 ```
-

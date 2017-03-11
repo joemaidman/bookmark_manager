@@ -4,7 +4,7 @@ class Bookmark < Sinatra::Base
    erb :bookmarkie
   end
 
-get '/links' do
+  get '/links' do
     @links = Link.all
     erb :'links/index'
   end

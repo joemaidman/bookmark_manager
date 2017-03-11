@@ -1,6 +1,6 @@
 class Bookmark < Sinatra::Base
 
-get '/users/new' do
+  get '/users/new' do
     @user = User.new
     erb :'users/new'
   end
@@ -18,4 +18,4 @@ get '/users/new' do
     end
   end
 
-  end
+end

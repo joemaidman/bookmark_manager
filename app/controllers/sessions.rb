@@ -1,6 +1,6 @@
 class Bookmark < Sinatra::Base
 
-get '/sessions/new' do
+  get '/sessions/new' do
     erb :'sessions/new'
   end
 
@@ -19,6 +19,6 @@ get '/sessions/new' do
     session[:user_id] = nil
     flash.keep[:notice] = 'You have signed-out.'
     redirect to '/links'
-end
+  end
 
 end

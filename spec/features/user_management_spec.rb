@@ -1,4 +1,5 @@
 feature 'User sign up' do
+
   email = "joemaidman@gmail.com"
   email_wrong = "joemaidman@gmail"
   password = "password"
@@ -11,12 +12,12 @@ feature 'User sign up' do
     expect(User.count).to eq(1)
   end
 
-   scenario 'User is not signed up if passwords do not match' do
-      expect {  sign_up(email:email, password: password,
+  scenario 'User is not signed up if passwords do not match' do
+    expect {  sign_up(email:email, password: password,
                       password_confirm: password_wrong) 
                     }.not_to change(User, :count)
-      expect(current_path).to eq('/users')
-      expect(page).to have_content "Password does not match the confirmation"
+    expect(current_path).to eq('/users')
+    expect(page).to have_content "Password does not match the confirmation"
   end
 
   scenario 'cannot sign-up with an empty email address' do
@@ -34,9 +35,11 @@ feature 'User sign up' do
     expect{sign_up(email:email, password: password)}.to_not change(User, :count)
     expect(page).to have_content('Email is already taken')
   end
+
 end
 
 feature 'User sign in' do
+
   email = "joemaidman@gmail.com"
   email_wrong = "joemaidman@gmail"
   password = "password"
@@ -80,5 +83,3 @@ feature 'User sign out' do
   end
 
 end
-  
-  

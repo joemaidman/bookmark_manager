@@ -1,4 +1,5 @@
-feature 'Adding a tag to a link' do 
+feature 'Adding a tag to a link' do
+  
   title = 'Google'
   url = 'https://www.google.com'
   tag = "tag_one"

@@ -17,7 +17,3 @@ namespace :db do
     end
 
 end
-# task :test do
- 
-#   sh 'rspec'
-# end
