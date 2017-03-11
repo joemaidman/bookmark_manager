@@ -1,17 +1,16 @@
 <link rel="stylesheet" type="text/css" href="/style.css">
-<h1> Links </h1>
-
-<ul id='links'>
-  <% @links.each do |link| %>
-    <li>
-      Title: <%= link.title %>
-      URL:   <%= link.url   %>
-      Tags:
-      <% link.tags.each do |tag| %>
-        <%= tag.tag%>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<a href="/links/new" class="button">Add link</a>
+<h3> Links </h3>
+<% if @links.length == 0 %>
+  You don't have any links
+<% end %>
+<% @links.each do |link| %>
+ <div style="border: solid black 2px; border-radius:5px;padding:5px;">
+ <h6><a href="<%= link.url %>"><%= link.title %></a></h6>
+  Tags:
+  <% link.tags.each do |tag| %>
+    <a href="/tags/<%= tag.tag%>"><%= tag.tag%></a>
+  <% end %>    
+ </div>
+ </br>
+<% end %>
+  

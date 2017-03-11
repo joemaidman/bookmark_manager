@@ -1,15 +1,13 @@
 class Bookmark < Sinatra::Base
 
-  get '/' do
-   erb :bookmarkie
-  end
-
   get '/links' do
+    redirect 'sessions/new' if !current_user
     @links = Link.all
     erb :'links/index'
   end
 
   get '/links/new' do
+    redirect 'sessions/new' if !current_user
     erb :'links/new'
   end
 

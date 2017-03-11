@@ -1,7 +1,17 @@
 <link rel="stylesheet" type="text/css" href="/style.css">
-<form action="/links" method=POST>
-    <input type="text" name="title"/>
-    <input type="text" name="url"/>
-    <input type="text" name="tags"/>
-    <input type="submit" class="button" value="Add"/>
+<div>
+<form  action="/links" method=POST>
+<div class="form-group">
+    <label class="control-label">Title</label>
+    <input class="form-control" type="text" name="title">
+    </br>
+     <label class="control-label">URL</label>
+    <input class="form-control" type="text" name="url">
+    </br>
+     <label class="control-label">Tags (comma separated)</label>
+    <input class="form-control" type="text" name="tags">
+    </br>
+    <input type="submit" class="btn btn-success" class="button" value="Add"/>
+</div>
 </form>
+</div>

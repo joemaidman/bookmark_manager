@@ -1,14 +1,15 @@
 <h1>Welcome to Bookmarkie! Please sign up</h1>
 
 <form action='/users' method='post'>
-  <label for='email'>
-    Email: <input name='email' type='email' value='<%= @user.email %>'>
-  </label>
-  <label for='password'>
-    Password: <input name='password' type='password'>
-  </label>
-    <label for='password_confirmation'>
-    Password confirmation: <input name='password_confirmation' type='password'>
-  </label>
-  <input type='submit' value='Sign Up'>
+<div class="form-group">
+  <label for='email' class="control-label">
+    Email <input class="form-control" name='email' type='email' value='<%= @user.email %>'>
+  </label></br>
+  <label for='password' class="control-label">
+    Password <input class="form-control" name='password' type='password'>
+  </label></br>
+    <label for='password_confirmation' class="control-label">
+    Password confirmation: <input class="form-control" name='password_confirmation' type='password'>
+  </label></br>
+  <input class="btn btn-success" type='submit' value='Sign Up'>
 </form>
