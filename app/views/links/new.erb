@@ -1,12 +1,12 @@
 <link rel="stylesheet" type="text/css" href="/style.css">
 <div>
-<form  action="/links" method=POST>
+<form  action="/links" method="POST">
 <div class="form-group">
     <label class="control-label">Title</label>
-    <input class="form-control" type="text" name="title">
+    <input class="form-control" type="text" name="title" value='<%= @link.title %>'>
     </br>
      <label class="control-label">URL</label>
-    <input class="form-control" type="text" name="url">
+    <input class="form-control" type="text" name="url" value='<%= @link.url %>'>
     </br>
      <label class="control-label">Tags (comma separated)</label>
     <input class="form-control" type="text" name="tags">

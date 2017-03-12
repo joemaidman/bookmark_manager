@@ -1,5 +1,5 @@
 feature 'Viewing links' do
-  
+
   title = 'Google'
   url = 'https://www.google.com'
   tag = "tag1"
@@ -12,12 +12,11 @@ feature 'Viewing links' do
   password = "password"
 
 before(:each) do
-     sign_up(email: email, password: password)
+    sign_up(email: email, password: password)
     sign_in(email: email, password: password)
   end
 
   scenario 'filter links by tag' do
-    
     create_link(title: title, url: url, tag: tag)
     create_link(title: title_two, url: url_two, tag: tag_two)
     visit "/tags/#{tag_two}"
@@ -26,4 +25,3 @@ before(:each) do
   end
 
 end
-

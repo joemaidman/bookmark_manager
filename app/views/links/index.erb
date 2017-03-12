@@ -5,7 +5,7 @@
 <% end %>
 <% @links.each do |link| %>
  <div class="panel-item">
- <h6><a href="<%= link.url %>"><%= link.title %></a></h6>
+ <h6><a target="_blank" href="<%= link.url %>"><%= link.title %></a></h6>
   Tags:
   <% if link.tags.length == 0 %>
     No tags
@@ -13,10 +13,10 @@
   <% link.tags.each do |tag| %>
     <a href="/tags/<%= tag.tag%>"><%= tag.tag%></a>
   <% end %>
- 
+
   <form class="form-inline my-2 my-lg-0" method='post' action='/links'>
     <input type='hidden' name='_method' value='delete'>
-    <input type='hidden' name='id' value='<%= link.id %>'>  
+    <input type='hidden' name='id' value='<%= link.id %>'>
     </br>
     </br>
     <input class="btn btn-danger" type="submit" value="Delete" class="btn btn-primary">
@@ -24,4 +24,3 @@
  </div>
  </br>
 <% end %>
-  
