@@ -21,22 +21,6 @@ So I can concentrate on a category
 I want to filter links by tags.
 ```
 
-## Screenshots
-**Sign up**
-
-![home](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/signup.png)
-
-**Add bookmark**
-
-![Profile](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/add.png)
-
-**Search Bookmarks**
-![peep](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/search.png)
-
-**List of Bookmarks**
-
-![reply](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/list.png)
-
 ## Technologies used
 **Backend**
 - Ruby
@@ -70,3 +54,19 @@ To test:
 To run the application on localhost:
 - Run `rackup`
 - Visit http://localhost:9292/
+
+## Screenshots
+**Sign up**
+
+![home](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/signup.png)
+
+**Add bookmark**
+
+![Profile](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/add.png)
+
+**Search Bookmarks**
+![peep](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/search.png)
+
+**List of Bookmarks**
+
+![reply](https://github.com/joemaidman/bookmark_manager/blob/master/screenshots/list.png)
