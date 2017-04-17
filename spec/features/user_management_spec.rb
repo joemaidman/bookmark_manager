@@ -4,7 +4,7 @@ feature 'User sign up' do
   email_wrong = "joemaidman@gmail"
   password = "password"
   password_wrong = "password2"
-  
+
   scenario 'I can sign up as a new user' do
     sign_up(email:email, password: password)
     expect(page).to have_content("#{email}")
@@ -14,7 +14,7 @@ feature 'User sign up' do
 
   scenario 'User is not signed up if passwords do not match' do
     expect {  sign_up(email:email, password: password,
-                      password_confirm: password_wrong) 
+                      password_confirm: password_wrong)
                     }.not_to change(User, :count)
     expect(current_path).to eq('/users')
     expect(page).to have_content "Password does not match the confirmation"
@@ -29,7 +29,7 @@ feature 'User sign up' do
     expect{ sign_up(email: email_wrong, password: password )}.not_to change(User, :count)
     expect(page).to have_content('Email has an invalid format')
   end
-  
+
   scenario 'cannot create a new account with the same email address' do
     sign_up(email:email, password: password)
     expect{sign_up(email:email, password: password)}.to_not change(User, :count)
@@ -79,7 +79,7 @@ feature 'User sign out' do
     sign_in(email: user.email,   password: user.password)
     click_button 'Sign out'
     expect(page).to have_content('You have signed-out.')
-    expect(page).not_to have_content('test@test.com')
+    expect(page).not_to have_content(email)
   end
 
 end
